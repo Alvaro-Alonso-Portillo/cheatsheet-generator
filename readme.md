@@ -56,15 +56,15 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
 3. Abre en tu navegador o usa un servidor local:index.html
 
 # Si tienes Python instalado
-      ```bash
-python -m http.server
-```
+    ```bash
+    python -m http.server
+
 
 # Si tienes Node.js instalado
-```bash
-npx serve
-```
-🔧 Uso
+    ```bash
+    npx serve
+
+## 🔧 Uso
 Crear una nueva hoja de trucos
 Selecciona una categoría en el sidebar
 Completa el título y la descripción
@@ -80,16 +80,16 @@ Navega a la pestaña "Exportar"
 Selecciona el formato deseado (PDF, HTML, Markdown)
 Configura las opciones de exportación
 Haz clic en "Exportar" para descargar tu hoja de trucos
-🤝 Contribuir
+## 🤝 Contribuir
 Las contribuciones son bienvenidas. Si deseas mejorar esta aplicación, puedes:
 Hacer fork del repositorio
 Crear una rama para tu característica (git checkout -b feature/amazing-feature)
 Hacer commit de tus cambios (git commit -m 'Add some amazing feature')
 Hacer push a la rama (git push origin feature/amazing-feature)
 Abrir un Pull Request
-📄 Licencia
+## 📄 Licencia
 Distribuido bajo la Licencia MIT. Ver para más información.LICENSE
-🙏 Agradecimientos
+## 🙏 Agradecimientos
 Bootstrap
 Highlight.js
 Fuente impresionante
