@@ -67,7 +67,6 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
     ```
 
 ## 🔧 Uso:
-
 -Crear una nueva hoja de trucos
 -Selecciona una categoría en el sidebar
 -Completa el título y la descripción
@@ -91,8 +90,10 @@ Crear una rama para tu característica (git checkout -b feature/amazing-feature)
 Hacer commit de tus cambios (git commit -m 'Add some amazing feature')
 Hacer push a la rama (git push origin feature/amazing-feature)
 Abrir un Pull Request
+
 ## 📄 Licencia
 Distribuido bajo la Licencia MIT. Ver para más información.LICENSE
+
 ## 🙏 Agradecimientos
 Bootstrap
 Highlight.js
