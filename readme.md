@@ -54,11 +54,14 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
     ```bash
     cd devcheatsheet-generator
 3. Abre en tu navegador o usa un servidor local:index.html
-    ```bash
-    # Si tienes Python instalado
+
+# Si tienes Python instalado
+      ```bash
 python -m http.server
+```
 
 # Si tienes Node.js instalado
+```bash
 npx serve
 ```
 🔧 Uso
