@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Cheatsheets para Devs</title>
+    <!-- Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js para resaltado de código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar para categorías -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-header">
+                    <h3>DevCheatSheet</h3>
+                </div>
+                <div class="sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item category-item active" data-category="javascript">
+                            <a class="nav-link" href="#"><i class="fab fa-js-square"></i> JavaScript</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="python">
+                            <a class="nav-link" href="#"><i class="fab fa-python"></i> Python</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="react">
+                            <a class="nav-link" href="#"><i class="fab fa-react"></i> React</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="node">
+                            <a class="nav-link" href="#"><i class="fab fa-node-js"></i> Node.js</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="git">
+                            <a class="nav-link" href="#"><i class="fab fa-git-alt"></i> Git</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="css">
+                            <a class="nav-link" href="#"><i class="fab fa-css3-alt"></i> CSS</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="html">
+                            <a class="nav-link" href="#"><i class="fab fa-html5"></i> HTML</a>
+                        </li>
+                        <li class="nav-item category-item" data-category="custom">
+                            <a class="nav-link" href="#"><i class="fas fa-plus-circle"></i> Personalizado</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Contenido principal -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="header">
+                    <h1>Generador de Cheatsheets para Devs</h1>
+                    <p class="lead">Crea cheatsheets personalizadas para tus necesidades de desarrollo</p>
+                </div>
+
+                <!-- Pestañas de navegación -->
+                <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="editor-tab" data-bs-toggle="tab" data-bs-target="#editor" type="button" role="tab" aria-controls="editor" aria-selected="true">Editor</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview" type="button" role="tab" aria-controls="preview" aria-selected="false">Vista Previa</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="export-tab" data-bs-toggle="tab" data-bs-target="#export" type="button" role="tab" aria-controls="export" aria-selected="false">Exportar</button>
+                    </li>
+                </ul>
+
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content" id="mainTabsContent">
+                    <!-- Pestaña de Editor -->
+                    <div class="tab-pane fade show active" id="editor" role="tabpanel" aria-labelledby="editor-tab">
+                        <div class="editor-container">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="cheatsheetTitle" class="form-label">Título del Cheatsheet</label>
+                                        <input type="text" class="form-control" id="cheatsheetTitle" placeholder="Ej: JavaScript ES6 Cheatsheet">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="cheatsheetCategory" class="form-label">Categoría</label>
+                                        <select class="form-select" id="cheatsheetCategory">
+                                            <option value="javascript">JavaScript</option>
+                                            <option value="python">Python</option>
+                                            <option value="react">React</option>
+                                            <option value="node">Node.js</option>
+                                            <option value="git">Git</option>
+                                            <option value="css">CSS</option>
+                                            <option value="html">HTML</option>
+                                            <option value="custom">Personalizado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cheatsheetDescription" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="cheatsheetDescription" rows="2" placeholder="Breve descripción del contenido del cheatsheet"></textarea>
+                            </div>
+
+                            <div class="snippets-container">
+                                <h4>Snippets <button class="btn btn-sm btn-primary" id="addSnippetBtn"><i class="fas fa-plus"></i> Añadir Snippet</button></h4>
+                                
+                                <div class="snippet-item card mb-3">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control form-control-sm snippet-title" placeholder="Título del snippet">
+                                        <div class="btn-group">
+                                            <button class="btn btn-sm btn-outline-secondary move-up-btn"><i class="fas fa-arrow-up"></i></button>
+                                            <button class="btn btn-sm btn-outline-secondary move-down-btn"><i class="fas fa-arrow-down"></i></button>
+                                            <button class="btn btn-sm btn-outline-danger remove-snippet-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Código</label>
+                                            <div class="code-editor-wrapper">
+                                                <textarea class="form-control code-editor" rows="5" placeholder="// Tu código aquí"></textarea>
+                                                <div class="language-selector">
+                                                    <select class="form-select form-select-sm">
+                                                        <option value="javascript">JavaScript</option>
+                                                        <option value="python">Python</option>
+                                                        <option value="jsx">JSX</option>
+                                                        <option value="html">HTML</option>
+                                                        <option value="css">CSS</option>
+                                                        <option value="bash">Bash</option>
+                                                        <option value="sql">SQL</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Explicación</label>
+                                            <textarea class="form-control snippet-explanation" rows="3" placeholder="Explica qué hace este código"></textarea>
+                                            <button class="btn btn-sm btn-outline-secondary mt-2 generate-explanation-btn" disabled><i class="fas fa-magic"></i> Generar con IA</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña de Vista Previa -->
+                    <div class="tab-pane fade" id="preview" role="tabpanel" aria-labelledby="preview-tab">
+                        <div class="preview-container mt-3">
+                            <div class="cheatsheet-preview">
+                                <div class="preview-header">
+                                    <h2 id="previewTitle">JavaScript ES6 Cheatsheet</h2>
+                                    <p id="previewDescription">Una guía rápida de referencia para las características de ES6</p>
+                                </div>
+                                <div class="preview-content" id="previewContent">
+                                    <!-- El contenido se generará dinámicamente con JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña de Exportación -->
+                    <div class="tab-pane fade" id="export" role="tabpanel" aria-labelledby="export-tab">
+                        <div class="export-container mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Opciones de Exportación</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <label for="exportTheme" class="form-label">Tema</label>
+                                                <select class="form-select" id="exportTheme">
+                                                    <option value="light">Claro</option>
+                                                    <option value="dark">Oscuro</option>
+                                                    <option value="colorful">Colorido</option>
+                                                    <option value="minimal">Minimalista</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exportFormat" class="form-label">Formato</label>
+                                                <select class="form-select" id="exportFormat">
+                                                    <option value="pdf">PDF</option>
+                                                    <option value="html">HTML</option>
+                                                    <option value="markdown">Markdown</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exportPaperSize" class="form-label">Tamaño de Papel (para PDF)</label>
+                                                <select class="form-select" id="exportPaperSize">
+                                                    <option value="a4">A4</option>
+                                                    <option value="letter">Carta</option>
+                                                    <option value="legal">Legal</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="includeLineNumbers">
+                                                <label class="form-check-label" for="includeLineNumbers">Incluir números de línea</label>
+                                            </div>
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input" id="includeTableOfContents">
+                                                <label class="form-check-label" for="includeTableOfContents">Incluir tabla de contenidos</label>
+                                            </div>
+                                            <button class="btn btn-primary" id="exportBtn">Exportar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Cheatsheets Guardadas</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="saved-cheatsheets-list">
+                                                <div class="list-group">
+                                                    <!-- Las cheatsheets guardadas se mostrarán aquí -->
+                                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                        JavaScript ES6 Basics
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                        React Hooks Reference
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS y Popper.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Highlight.js para resaltado de código -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- html2canvas y jsPDF para exportación a PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/openai.js"></script>
+    <script src="js/export.js"></script>
+</body>
+</html>
