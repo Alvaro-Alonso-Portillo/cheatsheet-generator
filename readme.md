@@ -32,7 +32,7 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
 
 ## 🚀 Demo
 
-[Ver Demo en vivo](https://Alvaro-Alonso-Portillo.github.io/devcheatsheet-generator) 
+[Ver Demo en vivo](https://alvaro-alonso-portillo.github.io/cheatsheet-generator/) 
 
 ![Screenshot de la aplicación](screenshot.png)
 
