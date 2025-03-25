@@ -32,7 +32,7 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
 
 ## 🚀 Demo
 
-[Ver Demo en vivo](https://tu-usuario.github.io/devcheatsheet-generator) 
+[Ver Demo en vivo](https://Alvaro-Alonso-Portillo.github.io/devcheatsheet-generator) 
 
 ![Screenshot de la aplicación](screenshot.png)
 
@@ -56,32 +56,31 @@ DevCheatSheet Generator es una aplicación web que permite a los desarrolladores
 3. Abre en tu navegador o usa un servidor local:index.html
 
 ### Si tienes Python instalado:
-    ```bash
+
     python -m http.server
-    ```
 
 
 ### Si tienes Node.js instalado:
-    ```bash
     npx serve
-    ```
+    
 
 ## 🔧 Uso:
--Crear una nueva hoja de trucos
--Selecciona una categoría en el sidebar
--Completa el título y la descripción
--Añade snippets de código usando el botón "Añadir Snippet"
--Para cada fragmento, proporciona un título, código y explicación
--Haz clic en "Guardar Cheatsheet" para guardar localmente
--Generar explicaciones con IA
--Configura tu API key de OpenAI haciendo clic en "Configurar OpenAI"
--Escribe o pega tu código en el editor
--Haz clic en "Generar con IA" para obtener una explicación automática
--Exportar hojas de trucos
--Navega a la pestaña "Exportar"
--Selecciona el formato deseado (PDF, HTML, Markdown)
--Configura las opciones de exportación
--Haz clic en "Exportar" para descargar tu hoja de trucos
+
+- Crear una nueva hoja de trucos
+- Selecciona una categoría en el sidebar
+- Completa el título y la descripción
+- Añade snippets de código usando el botón "Añadir Snippet"
+- Para cada fragmento, proporciona un título, código y explicación
+- Haz clic en "Guardar Cheatsheet" para guardar localmente
+- Generar explicaciones con IA
+- Configura tu API key de OpenAI haciendo clic en "Configurar OpenAI"
+- Escribe o pega tu código en el editor
+- Haz clic en "Generar con IA" para obtener una explicación automática
+- Exportar hojas de trucos
+- Navega a la pestaña "Exportar"
+- Selecciona el formato deseado (PDF, HTML, Markdown)
+- Configura las opciones de exportación
+- Haz clic en "Exportar" para descargar tu hoja de trucos
 
 ## 🤝 Contribuir
 Las contribuciones son bienvenidas. Si deseas mejorar esta aplicación, puedes:
